@@ -1,11 +1,59 @@
 package co.edu.uniquindio.poo;
 
+import java.io.IO;
 import java.util.Scanner;
 
 /** Menú para probar el punto 2 (historial) y el punto 4a (ABB por rango). */
 public class Main {
 
     public static void main(String[] args) {
+
+        IO.println("Ejercicio 1");
+        RetiroEvaluacion cajas = new RetiroEvaluacion();
+        cajas.apilar(new Caja("C1",2));//0
+        cajas.apilar(new Caja("C2",4));//1
+        cajas.apilar(new Caja("C3",6));//
+        cajas.apilar(new Caja("C4",8));//2
+        cajas.apilar(new Caja("C5",3));//3
+        cajas.apilar(new Caja("C6",9));//4
+        cajas.apilar(new Caja("C7",5));//5
+
+        IO.println(cajas.mostrar());
+        IO.println("Eliminacion Y reorden");
+        cajas.reordenarEliminarr("C3");
+        cajas.reordenarEliminarr("C4");
+        cajas.reordenarEliminarr("C7");
+
+
+
+
+
+        IO.println("\n"+"*************************************************");
+        IO.println("Ejercicio 3");
+
+        SeleccionSolicitudes solicitudes = new SeleccionSolicitudes();
+        Vehiculo vehiculo = new Vehiculo("Carro",14);
+
+        solicitudes.encolar(new Paquete("P1",Tipo.NORMAL,4));
+        solicitudes.encolar(new Paquete("P2",Tipo.URGENTE,7));
+        solicitudes.encolar(new Paquete("P3",Tipo.NORMAL,3));
+        solicitudes.encolar(new Paquete("P4",Tipo.URGENTE,5));
+        solicitudes.encolar(new Paquete("P5",Tipo.NORMAL,6));
+        solicitudes.encolar(new Paquete("P6",Tipo.URGENTE,4));
+        solicitudes.encolar(new Paquete("P7",Tipo.NORMAL,2));
+
+        IO.println(solicitudes.mostrar() + "\n");
+
+        solicitudes.seleccionarPaquete(vehiculo);
+        IO.println("_____________________________________________");
+
+
+
+
+
+
+
+
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {
@@ -29,6 +77,9 @@ public class Main {
     }
 
     // PUNTO 2
+
+
+
     static void punto2Ejemplo() {
         Pila<String> historial = new Pila<>();
         for (int i = 1; i <= 6; i++) historial.push("A" + i);
@@ -53,6 +104,17 @@ public class Main {
         System.out.println("Segmento [" + ini + "," + fin + "]:        " + seg.mostrar());
         System.out.println("Original después:         " + historial.mostrar());
     }
+
+
+
+
+
+
+
+
+
+
+
 
     //  PUNTO 4
     static void punto4Ejemplo() {
