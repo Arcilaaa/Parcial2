@@ -9,7 +9,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int opcion;
         do {
-            System.out.println("\n===== MENU =====");
+            System.out.println("\n MENU ");
             System.out.println("1. Punto 2 - Ejemplo del enunciado");
             System.out.println("2. Punto 2 - Probar con mis datos");
             System.out.println("3. Punto 4 - Ejemplo del enunciado");
@@ -28,7 +28,7 @@ public class Main {
         } while (opcion != 0);
     }
 
-    // ---------- PUNTO 2 ----------
+    // PUNTO 2
     static void punto2Ejemplo() {
         Pila<String> historial = new Pila<>();
         for (int i = 1; i <= 6; i++) historial.push("A" + i);
@@ -54,7 +54,7 @@ public class Main {
         System.out.println("Original después:         " + historial.mostrar());
     }
 
-    // ---------- PUNTO 4 ----------
+    //  PUNTO 4
     static void punto4Ejemplo() {
         NodoABB raiz = null;
         for (int k : new int[]{41, 20, 52, 16, 6, 13, 12, 60, 22, 47, 50, 60, 43, 44})
